@@ -10,7 +10,6 @@ for(let i=0; i<100; i++){
 
 
 
-
     gridContainer.append(square);
 }
 
@@ -18,7 +17,16 @@ for(let i=0; i<100; i++){
 //invoco la la funzione onClick fuori del ciclo for 
 function onSquareClick ( ) {
     this.classList.toggle("bg-success"); 
+
+    const randomNumbers = [];
+    
+for (let i=0; i<16; i++){
+    const randomNum = randomNumber = Math.floor(Math.random() * 100) +1;
+    randomNumbers.push(randomNum) 
+}
     // dataSet.indice = (i + 1)toString();perche mi cancella le celle ?
+
+
 }
 
 // ---------------------------------
@@ -27,12 +35,12 @@ function onSquareClick ( ) {
 //const randomNumber = Math.floor(Math.random() * 100) +1; questo genera solo un numero 
 
 
-const randomNumbers = [];
-for (let i=0; i<16; i++){
-    const randomNum = randomNumber = Math.floor(Math.random() * 100) +1;
-    randomNumbers.push(randomNum) 
-}
-console.log(randomNumbers)
+// const randomNumbers = [];
+// for (let i=0; i<16; i++){
+//     const randomNum = randomNumber = Math.floor(Math.random() * 100) +1;
+//     randomNumbers.push(randomNum) 
+// }
+// console.log(randomNumbers)
 
 //------------------------------------------------
 // In seguito l’utente clicca su una cella:
