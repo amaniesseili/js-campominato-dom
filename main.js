@@ -1,4 +1,6 @@
 const gridContainer = document.querySelector(".grid-container")
+const bombs = [];
+const numBombs = 16;
 
 for(let i=0; i<100; i++){
     const square = document.createElement("div");
@@ -7,10 +9,16 @@ for(let i=0; i<100; i++){
     square.addEventListener("click", onSquareClick) //dichiaro la funzione onclick..
 
 
-
-
-
     gridContainer.append(square);
+}
+
+
+//randombombs
+function generateBombs() {
+    for (let i = 0; i < 16; i++) {
+        const randomNum = Math.floor(Math.random() * 100);
+        bombs.push(randomNum);
+    }
 }
 
 
@@ -18,16 +26,21 @@ for(let i=0; i<100; i++){
 function onSquareClick ( ) {
     this.classList.toggle("bg-success"); 
 
-    const randomNumbers = [];
+    const squareIndex = [];
+
+
+    if (bombs.includes(squareIndex)) {
+        squareIndex.push(i);
+        this.classList.add("bg-danger");
+        
+    } else {
+        this.classList.add("bg-success");
+    }
+}
     
-for (let i=0; i<16; i++){
-    const randomNum = randomNumber = Math.floor(Math.random() * 100) +1;
-    randomNumbers.push(randomNum) 
-}
-    // dataSet.indice = (i + 1)toString();perche mi cancella le celle ?
 
 
-}
+
 
 // ---------------------------------
 
@@ -43,11 +56,4 @@ for (let i=0; i<16; i++){
 // console.log(randomNumbers)
 
 //------------------------------------------------
-// In seguito l’utente clicca su una cella:
-// se il numero è presente nella lista dei numeri generati - 
-// abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
-// Altrimenti la cella cliccata si colora di azzurro
-// e l’utente può continuare a cliccare sulle altre celle.
-
-// funzione per gestire il click sulla cella
 
